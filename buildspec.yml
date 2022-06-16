@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Nothing to do in the install step"         	     
+  pre_build:
+    commands:
+      - echo "Nothing to do in the pre_build step"
+  build:
+    commands:
+      - terraform init
+      - terraform plan
+      - terraform apply -auto-approve
+  post_build:
+    commands:
+      - terraform destroy -auto-approve
