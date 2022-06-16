@@ -10,9 +10,10 @@ phases:
       - "unzip -o terraform.zip"     	     
   pre_build:
     commands:
-      - cd "$CODEBUILD_SRC_DIR"
+      - echo "Nothing to do in the pre_build step"
   build:
-    commands:
+    commands:    
+      - "cd ${CODEBUILD_SRC_DIR}"
       - terraform init
       - terraform plan
       - terraform apply -auto-approve
