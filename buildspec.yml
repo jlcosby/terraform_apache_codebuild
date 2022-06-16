@@ -13,7 +13,7 @@ phases:
       - echo "Nothing to do in the pre_build step"
   build:
     commands:    
-      - cd "$CODEBUILD_SRC_DIR"
+      - "cd ${CODEBUILD_SRC_DIR}"
       - terraform init
       - terraform plan
       - terraform apply -auto-approve
